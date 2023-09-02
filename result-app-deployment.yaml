@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result-app
+  template:
+    metadata:
+      labels:
+        app: result-app
+    spec:
+      containers:
+        - name: result-app
+          image: irkhamdayat/result-app-image:1.0
+

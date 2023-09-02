@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webvoteapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-vote-app
+  template:
+    metadata:
+      labels:
+        app: web-vote-app
+    spec:
+      containers:
+      - name: web-vote-app
+        image: irkhamdayat/web-vote-app-image:1.0
+        env:
+          - name: WEB_VOTE_NUMBER
+            value: "01"
+
+
